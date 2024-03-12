@@ -100,3 +100,26 @@ body {
     background-repeat: no-repeat; /* Do not repeat the background image */
     height: 100vh; /* Set the height of the background to 100% of the viewport height */
 }
+
+
+
+
+img{
+    width: 220px;
+    height: 240px;
+}
+.div1{
+    width: 260px;
+    height: 370px;
+    background-color: white;
+    text-align: center;
+    border-bottom: yellow solid;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.div2{
+    width: 220px;
+    height: 240px;
+    background-color: white;
+    border: 20px #bdbdbd solid;
+}
