@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/91c8b6af86.js" crossorigin="anonymous"></script>
+    <title>GUND</title>
+    <style>
+        .main img {
+            width: 100%;
+            position: relative;
+        }
+
+        .animated-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 3em;
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            z-index: 100;
+            color: black;
+            margin-top: -800px;
+            margin-left: 380px;
+        }
+
+        .animated-text span {
+            opacity: 0;
+            transform: scale(0.5);
+            animation: fadeInPulse 2s ease-in-out infinite;
+            z-index: 100;
+        }
+
+        @keyframes fadeInPulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
+
+        .wh {
+            width: 400px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .wh input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-top: 50px;
+        }
+        .wh .hh{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: -100px;
+        }
+        .fa-brands{
+            color: #1877F2;
+            z-index: 12;
+            font-size: 26px;
+        }
+        .wh button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e09b34;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 50px;
+        }
+
+        .wh button:hover {
+            background-color: #4CAF50;
+        }
+        #error{
+            margin-left: 310px;
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            margin-top: -53px;
+            visibility: hidden;
+        }
+        #error2{
+            margin-left: 280px;
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            margin-top: 140px;
+            visibility: hidden;
+        }
+        .tt2{
+            color: rgb(0, 0, 0);
+            font-size: 12px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            position: absolute;
+            margin-top: 154px;
+            margin-left:  300px;
+            z-index: 111;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img src="login.jpg">
+        <div class="wh">
+            <h1 class="hh">Login</h1>
+            <p id="error">Incorect email!</p>
+            <p id="error2">Incorect Password!</p>
+            <p class="tt2">Forget Password?</p>
+            <i class="fa-brands fa-facebook"></i>
+            <input id="email" type="email" class="inp1" placeholder="Email">
+            <input id="pass" type="password" class="inp2" placeholder="Password">
+            <button onclick="error()">Login</button>
+        </div>
+    </div>
+    <div class="animated-text">
+        <span style="margin-top: 100px; margin-left: 30px;">G</span>
+        <span style="margin-top: 100px; margin-left: 30px;">U</span>
+        <span style="margin-top: 100px; margin-left: 30px;">N</span>
+        <span style="margin-top: 100px; margin-left: 30px;">D</span>
+        <span style="margin-top: 100px; margin-left: 30px;"></span>
+        <span style="margin-top: 100px; margin-left: 30px;">S</span>
+        <span style="margin-top: 100px; margin-left: 30px;">H</span>
+        <span style="margin-top: 100px; margin-left: 30px;">O</span>
+        <span style="margin-top: 100px; margin-left: 30px;">P</span>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+    function myFunction() {
+        var passInput = document.getElementById("pass");
+        passInput.type = passInput.type === "password" ? "text" : "password";
+    }
+
+    function error() {
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("pass").value;
+        let error = document.getElementById("error");
+        let error2 = document.getElementById("error2");
+        
+        if (email === "altka" && pass === "123") {
+            window.location.href = "index.html";
+        } else {
+            error.style.visibility = email !== "gund" ? "visible" : "hidden";
+            error2.style.visibility = pass !== "123" ? "visible" : "hidden";
+        }
+    }
+
+</script>
