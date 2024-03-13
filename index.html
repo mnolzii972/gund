@@ -6,51 +6,114 @@
     <title>NeedFashian - Your Fashion Destination</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-wt/0OfOsrWHJ2YcxokLO4tTRxWHLqZcY55nWvJ9R6sbTmcImOmmzsGn5YemLNzRymI8N/JEtScw5LwiauB8Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/svg-with-js.min.css">
-   <link rel="stylesheet" href="css.css">
-   <style>
-        .wom, a{
+    <link rel="stylesheet" href="css.css">
+    <style>
+        .wom, a {
             text-decoration: none;
             color: black;
             font-weight: bold;
         }
-        .dropbtn{
+
+        .dropbtn {
             font-weight: bold;
         }
-   </style>
+
+        .text2 {
+            text-transform: uppercase;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .navbar {
+            box-shadow: 10px 10px;
+        }
+
+        .img-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .img-container img.active {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 
 <!-- Navigation Bar -->
-<div style="box-shadow: 10px 10px;" class="navbar">
+<div class="navbar">
     <a href=""><p style="color: orangered;">GUND<i style="color: black;">shop</i></p></a>
     <a href="#" class="active"><i class=""></i>Home</a>
+    <a href="svrhig.html" class="active"><i class=""></i>Сүрчиг</a>
     <div class="dropdown">
-        <button class="dropbtn">Products
+        <button class="dropbtn">Бүтээгдэхүүн
             <i class="fa fa-caret-down"></i>
         </button>
-        
+
         <div class="dropdown-content">
-            <a href="man.html">Men</a>
-            <a href="woman.html">Women</a>
-            <a href="kid.html">Kids</a>
+            <a href="man.html">Эрэгтэй</a>
+            <a href="woman.html">Эмэгтэй</a>
+            <a href="kid.html">Хүүхэд</a>
             <a href="acc.html">Accessories</a>
         </div>
-    </div> 
+    </div>
     <a href="footer.html">About Us</a>
-
 </div>
 
 <div style="margin-top: 180px; margin-left: 80px;">
-    <p style="font-size: small;">SPRING / SUMMER COLLECTION 2024</p>
-    <h2>Get up tp 30% Off <br>
-    New Arrivals</h2>
+    <p style="font-size: small; text-transform: uppercase; font-weight: bold;">2024 ОНЫ ХАВАР/ЗУНЫ шинэ загварууд</p>
+    <h2 class="text2">шинэ загварууд 30% хямдралтай<br></h2>
     <button style="background-color: chocolate;color: white;border-radius: 13%; border: none;width: 105px; height: 36px;"><a href="shop.html">SHOP NOW</a></button>
 </div>
+
 <br><br><br><br><br>
+
 <div style="display: flex;">
-    <div class="wom" style="margin-left: 40px; width: 400px; height: 250px;text-align: center;justify-content: center;" ><a href="woman.html"><div style="width: 80px; background-color: aliceblue;margin-top: 80px;">WOMAN'S</div></a></div>
+    <div class="wom" style="margin-left: 40px; width: 400px; height: 250px;text-align: center;justify-content: center;" ><a href="woman.html"><div style="width: 80px; background-color: aliceblue;margin-top: 80px;">Эмэгтэй</div></a></div>
     <div  class="acc" style="margin-left: 40px;margin-top: 40px;  width: 350px;text-align: center; height: 190px;" ><a href="acc.html"><div style="width: 150px; background-color: aliceblue;margin-top: 30%;">ACCESSORIES</div></a></div>
-    <div class="man" style="margin-left: 40px; width: 400px; text-align: center;height: 250px;"><a href="man.html">><div style="width: 80px; background-color: aliceblue;margin-top: 80px;">MAN'S</div></a></div>
+    <div class="man" style="margin-left: 40px; width: 400px; text-align: center;height: 250px;"><a href="man.html">><div style="width: 80px; background-color: aliceblue;margin-top: 80px;">Эрэгтэй</div></a></div>
 </div>
+
+<div class="img-container">
+    <img src="images/s1.jpg" class="backk active">
+    <img src="images/s2.jpg" class="backk1">
+    <img src="images/s3.jpg" class="backk2">
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let currentImage = 0;
+        const images = document.querySelectorAll('.img-container img');
+
+        function showImage(index) {
+            images.forEach((img) => {
+                img.classList.remove('active');
+            });
+
+            images[index].classList.add('active');
+        }
+
+        setInterval(() => {
+            currentImage = (currentImage + 1) % images.length;
+            showImage(currentImage);
+        }, 2000);
+    });
+</script>
+
 </body>
 </html>
